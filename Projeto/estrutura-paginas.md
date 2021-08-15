@@ -33,7 +33,7 @@ Para utilização em grupos de páginas sem o segundo nível de navegação.
 * Altura do rodapé: 100px - fixo.
 
 
-![Page without sidebar](imgs\page-without-sidebar.svg "Modelo 1")
+![Page without sidebar](imgs/page-without-sidebar.svg "Modelo 1")
 
 ## Modelo 2 - Páginas com sidebar
 
@@ -51,4 +51,4 @@ Para utilização em grupos de página onde há um segundo nível de navegação
 * Altura do rodapé: 100px - fixo.
 
 
-![Page with sidebar](imgs\page-with-sidebar.svg "Modelo 2")
+![Page with sidebar](imgs/page-with-sidebar.svg "Modelo 2")
