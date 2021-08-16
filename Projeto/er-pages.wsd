@@ -1,0 +1,187 @@
+```plantuml
+@startuml er
+
+class PTAF.PAGE_TYPES << (T,orchid) >>{
+*id : integer
+--
+*description : varchar2 (2000 byte)
+*id_user_created: integer <<FK>>
+*id_user_modify: integer <<FK>>
+*created_in: date
+*last_modify : date
+*active: boolean
+}
+
+class PTAF.PAGES << (T,orchid) >>{
+*id : integer
+--
+*id_page_type: integer <<FK>>
+*title: varchar2 (200 byte)
+*slug: varchar2 (100 byte)
+*url: varchar2 (100 byte)
+*id_menu: integer <<FK>>
+*description : varchar2 (400 byte)
+*id_user_created: integer <<FK>>
+*id_user_modify: integer <<FK>>
+*created_in: date
+*last_modify : date
+*active: boolean
+}
+
+class PTAF.PAGE_CONTENT << (T,orchid) >>{
+*id : integer
+--
+*id_page: integer <<FK>>
+*title: varchar2 (200 byte)
+*content: clob
+*id_user_created: integer <<FK>>
+*id_user_modify: integer <<FK>>
+*created_in: date
+*last_modify : date
+*approved: boolean
+*id_user_approved: integer <<FK>>
+*date_approved: date
+*public: boolean
+*id_user_publish: integer <<FK>>
+*date_publish: date
+}
+
+class PTAF.PAGE_CONTENT_FILES << (T,orchid) >>{
+*id : integer
+--
+*id_page: integer <<FK>>
+*filename: varchar2 (200 byte)
+*mimetype: varchar2 (200 byte)
+*file: blob
+*url_file: varchar2 (200 byte)
+}
+
+class PTAF.MENU_GROUP << (T,orchid) >>{
+*id : integer
+--
+*group_name : varchar2 (400 byte)
+*description : varchar2 (400 byte)
+*level: integer
+*id_submenu_group: integer <<FK>> 
+*id_user_created: integer <<FK>>
+*id_user_modify: integer <<FK>>
+*created_in: date
+*last_modify : date
+*active: boolean
+}
+
+class PTAF.MENU << (T,orchid) >>{
+*id : integer
+--
+*id_menu_group : integer <<FK>>
+*description : varchar2 (400 byte)
+*level: integer
+*id_user_created: integer
+*id_user_modify: integer
+*created_in: date
+*last_modify : date
+*active: boolean
+}
+
+class PTAF.CONTENT_USER << (T,orchid) >>{
+*id : integer
+--
+*id_content_user_role : integer <<FK>>
+*id_profile_user : integer <<FK>>
+*created_in: date
+*last_modify : date
+*active: boolean
+}
+
+class PTAF.CONTENT_USER_ROLE << (T,orchid) >>{
+*id : integer
+--
+*description : varchar2 (400 byte)
+*active: boolean
+}
+
+class PTAF.PROFILE_USER << (T,orchid) >>{
+*id : integer
+--
+*primeiro_nomme : varchar2 (400 byte)
+*sobrenome : varchar2 (400 byte)
+*login : varchar2 (400 byte)
+*ptafsenha : varchar2 (400 byte)
+*id_image: integer <<FK>>
+*id_endereco: integer <<FK>>
+*telefone: varchar2 (15 byte)
+*id_instituicao: integer <<FK>>
+*cpf: varchar2 (11 byte)
+*email : varchar2 (400 byte)
+}
+
+class PTAF.IMAGE << (T,orchid) >>{
+*id : integer
+--
+*filename: varchar2 (200 byte)
+*mimetype: varchar2 (200 byte)
+*file: blob
+*url_file: varchar2 (200 byte)
+}
+
+class PTAF.TIPO_INSTITUICAO << (T,orchid) >>{
+*id : integer
+--
+*descricao : varchar2 (400 byte)
+}
+
+class PTAF.INSTITUICAO << (T,orchid) >>{
+*id : integer
+--
+*nome : varchar2 (400 byte)
+*id_tipo_instituicao: integer <<FK>>
+*id_endereco: integer <<FK>>
+*cnpj: varchar2 (14 byte)
+}
+
+class PTAF.ENDERECOS << (T,orchid) >>{
+*id : integer
+--
+*rua : varchar2 (400 byte)
+*numero : varchar2 (100 byte)
+*complemento : varchar2 (400 byte)
+*cep: varchar2 (9 byte)
+*bairro : varchar2 (400 byte)
+*id_cidade: integer <<FK>>
+}
+
+class PTAF.CIDADES << (T,orchid) >>{
+*id : integer
+--
+*nome : varchar2 (400 byte)
+*id_estado: integer <<FK>>
+}
+
+class PTAF.ESTADOS<< (T,orchid) >>{
+*id : integer
+--
+*nome : varchar2 (400 byte)
+*sigla : varchar2 (2 byte)
+}
+
+PTAF.PAGES }|-right-|| PTAF.PAGE_TYPES
+PTAF.PAGES ||--o{  PTAF.PAGE_CONTENT
+PTAF.PAGE_CONTENT ||-right-o{ PTAF.PAGE_CONTENT_FILES
+PTAF.MENU_GROUP |o--o| PTAF.MENU_GROUP 
+PTAF.MENU_GROUP ||-left-o| PTAF.MENU
+PTAF.MENU }o-right-o| PTAF.PAGES
+PTAF.CONTENT_USER_ROLE }|-down-o{ PTAF.CONTENT_USER
+PTAF.CONTENT_USER ||-down-|| PTAF.PROFILE_USER
+PTAF.MENU_GROUP }|-left-|{ PTAF.CONTENT_USER
+PTAF.MENU }|-right-|{ PTAF.CONTENT_USER
+PTAF.PAGES }|-up-|{ PTAF.CONTENT_USER
+PTAF.PAGE_TYPES }|-up-|{ PTAF.CONTENT_USER
+PTAF.TIPO_INSTITUICAO |o-right-o| PTAF.INSTITUICAO 
+PTAF.ENDERECOS ||--o| PTAF.INSTITUICAO
+PTAF.PROFILE_USER ||-down-|| PTAF.ENDERECOS
+PTAF.PROFILE_USER ||-right-|| PTAF.IMAGE 
+PTAF.CIDADES ||-left-o{ PTAF.ENDERECOS 
+PTAF.ESTADOS ||-up-o{ PTAF.CIDADES
+
+@enduml
+```	
