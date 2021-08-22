@@ -1,58 +1,58 @@
 @startmindmap mapasite
-+ Inicial
++[#MediumPurple] Inicial
 ++ Institucional
-+++ Gestores
-+++ Organograma
++++[#Aquamarine] Gestores
++++[#Aquamarine] Organograma
 +++ Competências
-+++ Legislação
++++[#Orange] Legislação
 +++ Relatório de Acompanhamento de Projetos e Execução de Obras Públicas
 +++ Relatório de Gestão Fiscal
 +++ Relatório Resumido de Execução Orçamentária
-+++ Horário de Atendimento
-+++ Endereços e Contatos
-+++ Site Institucional
++++[#Orange] Horário de Atendimento
++++[#Orange] Endereços e Contatos
++++[#plum] Site Institucional
 ++ O que estamos fazendo
-+++ Lista das ações e programas
-+++ Carta de Serviços
-+++ Programas Financiados
++++[#Orange] Lista das ações e programas
++++[#Orange] Carta de Serviços
++++[#Orange] Programas Financiados
 +++ Participação do orçamento da prefeitura
 ++ Convênios 
 +++ Informações
-+++ Dados do SINCOV
++++[#plum] Dados do SINCOV
 ++ Participação Social
 +++  Ouvidoria
 +++  Audiências e Consultas Públicas
 +++  Consórcios e Órgãos Colegiados
-+++  Outras ações
++++[#Orange]  Outras ações
 +++  Serviço de Informações ao Cidadão
 ++ Auditorias
-+++  Consulta processos do TCE-RS 
++++[#plum]  Consulta processos do TCE-RS 
 +++  Relatórios de Auditoria Interna
 +++  Controle Interno
 +++  Controladoria-Geral do Município
 ++ Licitações e Contratos
-+++  Dados do LICITACON
-+++  Editais
-+++  Realizadas
-+++  Em andamento 
++++[#plum]  Dados do LICITACON
++++[#Aquamarine]  Editais
++++[#Aquamarine]  Realizadas
++++[#Aquamarine]  Em andamento 
 ++ Servidores
-+++  Dados 
-+++  Diárias e Passagens
++++[#Aquamarine]  Dados 
++++[#Aquamarine]  Diárias e Passagens
 +++  Treinamentos Realizados/Eventos
 ++ Receitas e Despesas
-+++  Receitas
-+++  Despesas
-+++  Renúncia de Receitas
-+++  Prestação de Contas
-+++  Lei de Responsabilidade Fiscal
--- Ajuda
--- COVID
--- Política de Privacidade
--- Termos de uso
++++[#Aquamarine]  Receitas
++++[#Aquamarine]  Despesas
++++[#Aquamarine]  Renúncia de Receitas
++++[#Aquamarine]  Prestação de Contas
++++[#Aquamarine]  Lei de Responsabilidade Fiscal
+--[#Orange] Ajuda
+--[#Aquamarine] COVID
+--[#Orange] Política de Privacidade
+--[#Orange] Termos de uso
 -- Informações Classificadas
--- Glossário
+--[#Aquamarine] Glossário
 -- Dados Abertos
--- Autenticação/Login
--- Consultas Salvas
--- Minhas notificações
+--[#Tomato] Autenticação/Login
+--[#Aquamarine] Consultas Salvas
+--[#Aquamarine] Minhas notificações
 @endmindmap

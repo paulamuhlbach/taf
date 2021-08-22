@@ -87,7 +87,7 @@ class PTAF.CONTENT_USER << (T,orchid) >>{
 *id : integer
 --
 *id_content_user_role : integer <<FK>>
-*id_profile_user : integer <<FK>>
+*id_USER_PROFILE : integer <<FK>>
 *created_in: date
 *last_modify : date
 *active: boolean
@@ -100,7 +100,7 @@ class PTAF.CONTENT_USER_ROLE << (T,orchid) >>{
 *active: boolean
 }
 
-class PTAF.PROFILE_USER << (T,orchid) >>{
+class PTAF.USER_PROFILE << (T,orchid) >>{
 *id : integer
 --
 *primeiro_nomme : varchar2 (400 byte)
@@ -130,7 +130,7 @@ class PTAF.TIPO_INSTITUICAO << (T,orchid) >>{
 *descricao : varchar2 (400 byte)
 }
 
-class PTAF.INSTITUICAO << (T,orchid) >>{
+class PTAF.INSTITUICOES << (T,orchid) >>{
 *id : integer
 --
 *nome : varchar2 (400 byte)
@@ -171,15 +171,15 @@ PTAF.MENU_GROUP |o--o| PTAF.MENU_GROUP
 PTAF.MENU_GROUP ||-left-o| PTAF.MENU
 PTAF.MENU }o-right-o| PTAF.PAGES
 PTAF.CONTENT_USER_ROLE }|-down-o{ PTAF.CONTENT_USER
-PTAF.CONTENT_USER ||-down-|| PTAF.PROFILE_USER
+PTAF.CONTENT_USER ||-down-|| PTAF.USER_PROFILE
 PTAF.MENU_GROUP }|-left-|{ PTAF.CONTENT_USER
 PTAF.MENU }|-right-|{ PTAF.CONTENT_USER
 PTAF.PAGES }|-up-|{ PTAF.CONTENT_USER
 PTAF.PAGE_TYPES }|-up-|{ PTAF.CONTENT_USER
 PTAF.TIPO_INSTITUICAO |o-right-o| PTAF.INSTITUICAO 
 PTAF.ENDERECOS ||--o| PTAF.INSTITUICAO
-PTAF.PROFILE_USER ||-down-|| PTAF.ENDERECOS
-PTAF.PROFILE_USER ||-right-|| PTAF.IMAGE 
+PTAF.USER_PROFILE ||-down-|| PTAF.ENDERECOS
+PTAF.USER_PROFILE ||-right-|| PTAF.IMAGE 
 PTAF.CIDADES ||-left-o{ PTAF.ENDERECOS 
 PTAF.ESTADOS ||-up-o{ PTAF.CIDADES
 

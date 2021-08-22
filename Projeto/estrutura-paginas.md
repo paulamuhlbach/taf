@@ -1,6 +1,6 @@
 # Estrutura das páginas
 
-A estrutura da página do portal TAF é composta por:
+A estrutura CORE do portal TAF é composta por:
 * Header
     * Main menu
     * Logotipo
