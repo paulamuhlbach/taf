@@ -9,7 +9,7 @@ class PTAF.PAGE_TYPES << (T,orchid) >>{
 *id_user_modify: integer <<FK>>
 *created_in: date
 *last_modify : date
-*active: boolean
+*active: char(1)
 }
 
 class PTAF.PAGES << (T,orchid) >>{
@@ -33,15 +33,15 @@ class PTAF.PAGE_CONTENT << (T,orchid) >>{
 --
 *id_page: integer <<FK>>
 *title: varchar2 (200 byte)
-*content: clob
+*content: text
 *id_user_created: integer <<FK>>
 *id_user_modify: integer <<FK>>
 *created_in: date
 *last_modify : date
-*approved: boolean
+*approved: char(1)
 *id_user_approved: integer <<FK>>
 *date_approved: date
-*public: boolean
+*public: char(1)
 *id_user_publish: integer <<FK>>
 *date_publish: date
 }
@@ -52,15 +52,15 @@ class PTAF.PAGE_CONTENT_FILES << (T,orchid) >>{
 *id_page: integer <<FK>>
 *filename: varchar2 (200 byte)
 *mimetype: varchar2 (200 byte)
-*file: blob
+*file: BYTEA
 *url_file: varchar2 (200 byte)
 }
 
 class PTAF.MENU_GROUP << (T,orchid) >>{
 *id : integer
 --
-*group_name : varchar2 (400 byte)
-*description : varchar2 (400 byte)
+*group_name : varchar2 (50 byte)
+*description : varchar2 (200 byte)
 *level: integer
 *id_submenu_group: integer <<FK>> 
 *id_user_created: integer <<FK>>
@@ -87,10 +87,10 @@ class PTAF.CONTENT_USER << (T,orchid) >>{
 *id : integer
 --
 *id_content_user_role : integer <<FK>>
-*id_USER_PROFILE : integer <<FK>>
+*id_user_profile : integer <<FK>>
 *created_in: date
 *last_modify : date
-*active: boolean
+*active: char(1)
 }
 
 class PTAF.CONTENT_USER_ROLE << (T,orchid) >>{
@@ -103,7 +103,7 @@ class PTAF.CONTENT_USER_ROLE << (T,orchid) >>{
 class PTAF.USER_PROFILE << (T,orchid) >>{
 *id : integer
 --
-*primeiro_nomme : varchar2 (400 byte)
+*primeiro_nome : varchar2 (400 byte)
 *sobrenome : varchar2 (400 byte)
 *login : varchar2 (400 byte)
 *ptafsenha : varchar2 (400 byte)
@@ -120,7 +120,7 @@ class PTAF.IMAGE << (T,orchid) >>{
 --
 *filename: varchar2 (200 byte)
 *mimetype: varchar2 (200 byte)
-*file: blob
+*file: BYTEA
 *url_file: varchar2 (200 byte)
 }
 
